@@ -7,7 +7,7 @@ export const Login = () => {
   return (
     <div className="limiter">
       <div className="logo__back_login">
-        <a href="./index.html">
+        <a href="/">
           <img src={logo} alt="" />
         </a>
       </div>
