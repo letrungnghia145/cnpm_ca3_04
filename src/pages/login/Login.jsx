@@ -1,10 +1,16 @@
 import React from "react";
 import backgroundLogin from './../../assets/img/background-login.jpg'
 import './../../assets/css/login-style.css';
+import logo from './../../assets/img/logo.png';
 
 export const Login = () => {
   return (
     <div className="limiter">
+      <div className="logo__back_login">
+        <a href="./index.html">
+          <img src={logo} alt="" />
+        </a>
+      </div>
       <div className="container-login100">
         <div className="wrap-login100">
           <form className="login100-form validate-form">
