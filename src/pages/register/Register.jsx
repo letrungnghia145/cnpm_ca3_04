@@ -9,7 +9,7 @@ export const Register = () => {
   return (
     <div className="wrapper">
       <div className="logo__back">
-        <a href="./index.html">
+        <a href="/">
           <img src={logo} alt="" />
         </a>
       </div>
