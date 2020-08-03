@@ -25,16 +25,16 @@ export const Header = () => {
               <div className="col-lg-6">
                 <div className="header__top__right">
                   <div className="header__top__right__social">
-                    <a href="#">
+                    <a href="/">
                       <i className="fa fa-facebook" />
                     </a>
-                    <a href="#">
+                    <a href="/">
                       <i className="fa fa-twitter" />
                     </a>
-                    <a href="#">
+                    <a href="/">
                       <i className="fa fa-linkedin" />
                     </a>
-                    <a href="#">
+                    <a href="/">
                       <i className="fa fa-pinterest-p" />
                     </a>
                   </div>
@@ -44,10 +44,10 @@ export const Header = () => {
                     <span className="arrow_carrot-down" />
                     <ul>
                       <li>
-                        <a href="#">Spanis</a>
+                        <a href="/">Vietnamese</a>
                       </li>
                       <li>
-                        <a href="#">English</a>
+                        <a href="/">English</a>
                       </li>
                     </ul>
                   </div>
@@ -72,7 +72,7 @@ export const Header = () => {
           <div className="row">
             <div className="col-lg-3">
               <div className="header__logo">
-                <a href="./index">
+                <a href="/">
                   <img src={logo} alt="" />
                 </a>
               </div>
@@ -83,10 +83,10 @@ export const Header = () => {
                   <CustomLink to="/" activeOnlyWhenExact={true} label="Home" />
                   <CustomLink to="/categories" label="Shop" />
                   <li>
-                    <a href="#">Pages</a>
+                    <a href="/">Pages</a>
                     <ul className="header__menu__dropdown">
                       <li>
-                        <a href="/shop-details">Shop Details</a>
+                        <a href="/product">Shop Details</a>
                       </li>
                       <li>
                         <a href="/shoping-cart">Shoping Cart</a>
@@ -104,18 +104,18 @@ export const Header = () => {
               <div className="header__cart">
                 <ul>
                   <li>
-                    <a href="#">
-                      <i className="fa fa-heart" /> <span>1</span>
+                    <a href="/">
+                      <i className="fa fa-heart" /> <span>0</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i className="fa fa-shopping-bag" /> <span>3</span>
+                    <a href="/">
+                      <i className="fa fa-shopping-bag" /> <span>0</span>
                     </a>
                   </li>
                 </ul>
                 <div className="header__cart__price">
-                  item: <span>$150.00</span>
+                  item: <span>$0.00</span>
                 </div>
               </div>
             </div>
@@ -174,7 +174,7 @@ export const Header = () => {
                     100% Organic
                   </h2>
                   <p>Free Pickup and Delivery Available</p>
-                  <a href="#" className="primary-btn">
+                  <a href="/" className="primary-btn">
                     SHOP NOW
                   </a>
                 </div>
@@ -191,37 +191,37 @@ const Navbar = () => {
   return (
     <ul>
       <li className="active">
-        <a href="#">Fresh Meat</a>
+        <a href="/">Fresh Meat</a>
       </li>
       <li>
-        <a href="#">Vegetables</a>
+        <a href="/">Vegetables</a>
       </li>
       <li>
-        <a href="#">Fruit &amp; Nut Gifts</a>
+        <a href="/">Fruit &amp; Nut Gifts</a>
       </li>
       <li>
-        <a href="#">Fresh Berries</a>
+        <a href="/">Fresh Berries</a>
       </li>
       <li>
-        <a href="#">Ocean Foods</a>
+        <a href="/">Ocean Foods</a>
       </li>
       <li>
-        <a href="#">Butter &amp; Eggs</a>
+        <a href="/">Butter &amp; Eggs</a>
       </li>
       <li>
-        <a href="#">Fastfood</a>
+        <a href="/">Fastfood</a>
       </li>
       <li>
-        <a href="#">Fresh Onion</a>
+        <a href="/">Fresh Onion</a>
       </li>
       <li>
-        <a href="#">Papayaya &amp; Crisps</a>
+        <a href="/">Papayaya &amp; Crisps</a>
       </li>
       <li>
-        <a href="#">Oatmeal</a>
+        <a href="/">Oatmeal</a>
       </li>
       <li>
-        <a href="#">Fresh Bananas</a>
+        <a href="/">Fresh Bananas</a>
       </li>
     </ul>
   );
