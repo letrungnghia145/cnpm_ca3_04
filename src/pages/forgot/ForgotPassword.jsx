@@ -1,4 +1,5 @@
 import React from "react";
+import logo from './../../assets/img/logo.png';
 
 export const ForgotPassword = (props) => {
   const content = (
@@ -13,7 +14,12 @@ export const ForgotForm = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-4 col-md-offset-4">
+      <div className="logo__back_login">
+        <a href="/">
+          <img src={logo} alt="" />
+        </a>
+      </div>
+        <div className="col-md-12 col-md-offset-12" style={{padding: "180px 370px"}}>
           <div className="panel panel-default">
             <div className="panel-body">
               <div className="text-center">
@@ -40,6 +46,7 @@ export const ForgotForm = (props) => {
                       </div>
                       <div className="form-group">
                         <input
+                          style={{backgroundColor:"#7fad39", borderColor:"#7fad39"}}
                           className="btn btn-lg btn-primary btn-block"
                           defaultValue="Send My Password"
                           type="submit"
