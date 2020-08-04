@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./";
 import { CustomLink } from "../../../shared/components/custom-link/CustomLink";
 import banner from "./../../../assets/img/hero/banner.jpg";
 import logo from "./../../../assets/img/logo.png";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isShow, toggle] = useState(false);
@@ -52,16 +53,13 @@ export const Header = () => {
                     </ul>
                   </div>
                   <div className="header__top__right__auth mr-2">
-                    <a href="/login">
+                    <Link to="/login">
                       <i className="fa fa-user" /> Login
-                    </a>
+                    </Link>
                   </div>
-                  <div className="header__top__right__auth mr-2">
-                    /
-                  </div>
+                  <div className="header__top__right__auth mr-2">/</div>
                   <div className="header__top__right__auth">
-                    <a href="/register">Register
-                    </a>
+                    <Link to="/register">Register</Link>
                   </div>
                 </div>
               </div>
@@ -86,13 +84,13 @@ export const Header = () => {
                     <a href="/">Pages</a>
                     <ul className="header__menu__dropdown">
                       <li>
-                        <a href="/product">Shop Details</a>
+                        <CustomLink to="/product" label="Shop details" />
                       </li>
                       <li>
-                        <a href="/shoping-cart">Shoping Cart</a>
+                        <CustomLink to="/cart" label="Shopping Cart" />
                       </li>
                       <li>
-                        <a href="/checkout">Check Out</a>
+                        <CustomLink to="/checkout" label="Check out" />
                       </li>
                     </ul>
                   </li>
@@ -132,11 +130,16 @@ export const Header = () => {
           <div className="row">
             <div className="col-lg-3">
               <div className="hero__categories">
-                <div className="hero__categories__all" onClick={()=>{toggle(!isShow)}}>
+                <div
+                  className="hero__categories__all"
+                  onClick={() => {
+                    toggle(!isShow);
+                  }}
+                >
                   <i className="fa fa-bars" />
                   <span>All departments</span>
                 </div>
-                {isShow?<Navbar/>:null}
+                {isShow ? <Navbar /> : null}
               </div>
             </div>
             <div className="col-lg-9">
@@ -161,22 +164,6 @@ export const Header = () => {
                     <h5>+84 964 123 321</h5>
                     <span>support 24/7 time</span>
                   </div>
-                </div>
-              </div>
-              <div
-                className="hero__item set-bg"
-                style={{ backgroundImage: `url(${banner})` }}
-              >
-                <div className="hero__text">
-                  <span>FRUIT FRESH</span>
-                  <h2>
-                    Vegetable <br />
-                    100% Organic
-                  </h2>
-                  <p>Free Pickup and Delivery Available</p>
-                  <a href="/" className="primary-btn">
-                    SHOP NOW
-                  </a>
                 </div>
               </div>
             </div>
