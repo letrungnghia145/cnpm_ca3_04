@@ -105,17 +105,17 @@ export const Header = () => {
                 <ul>
                   <li>
                     <a href="/">
-                      <i className="fa fa-heart" /> <span>0</span>
+                      <i className="fa fa-heart" /> <span>1</span>
                     </a>
                   </li>
                   <li>
-                    <a href="/">
-                      <i className="fa fa-shopping-bag" /> <span>0</span>
+                    <a href="/cart">
+                      <i className="fa fa-shopping-bag" /> <span>3</span>
                     </a>
                   </li>
                 </ul>
                 <div className="header__cart__price">
-                  item: <span>$0.00</span>
+                  item: <span>$150.00</span>
                 </div>
               </div>
             </div>
@@ -143,11 +143,11 @@ export const Header = () => {
               <div className="hero__search">
                 <div className="hero__search__form">
                   <form action="#">
-                    <div className="hero__search__categories">
+                    {/* <div className="hero__search__categories">
                       All Categories
                       <span className="arrow_carrot-down" />
-                    </div>
-                    <input type="text" placeholder="What do yo u need?" />
+                    </div> */}
+                    <input type="text" placeholder="What do you need?" />
                     <button type="submit" className="site-btn">
                       SEARCH
                     </button>
@@ -158,7 +158,7 @@ export const Header = () => {
                     <i className="fa fa-phone" />
                   </div>
                   <div className="hero__search__phone__text">
-                    <h5>+65 11.188.888</h5>
+                    <h5>+84 964 123 321</h5>
                     <span>support 24/7 time</span>
                   </div>
                 </div>
