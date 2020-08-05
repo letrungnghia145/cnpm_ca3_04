@@ -63,37 +63,7 @@ export const Login = () => {
                 User name / password?
               </a>
             </div>
-            <div
-              className="w-full text-center"
-              style={{
-                backgroundColor: "#D74135",
-                marginBottom: "10px",
-                padding: "10px 0",
-                borderRadius: "10px",
-              }}
-            >
-              <a
-                style={{ color: "white" }}
-                href="https://www.facebook.com/dialog/oauth?client_id=180439422588509&redirect_uri=https://localhost:8443/login-facebook"
-              >
-                Login Google
-              </a>
-            </div>
-            <div
-              className="w-full text-center"
-              style={{
-                backgroundColor: "#4267b2",
-                padding: "10px 0",
-                borderRadius: "10px",
-              }}
-            >
-              <a
-                style={{ color: "white" }}
-                href="https://www.facebook.com/dialog/oauth?client_id=180439422588509&redirect_uri=https://localhost:8443/login-facebook"
-              >
-                Login Facebook
-              </a>
-            </div>
+            
             <div className="w-full text-center" style={{ paddingTop: "15px" }}>
               <a href="/register" className="txt3">
                 Register
