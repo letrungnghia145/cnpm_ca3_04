@@ -5,26 +5,13 @@ import logo from "./../../assets/img/logo.png";
 import { callApi } from "../../api";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Login = () => {
-  const history = useHistory();
-  const doLogin = (event) => {
-    event.preventDefault();
-    callApi("login", "post", {
-      username: "nghia1k45",
-      password: "172285633",
-    }).then((response) => {
-      if (response != null) {
-        localStorage.setItem("token", response.data.token);
-        const item = localStorage.getItem('token');
-        console.log(item)
-        // const history = useHistory();
-        // history.push("/");
-        // window.location.reload();
-        history.push("/");
-      }
-    });
+  const onChange = (value) => {
+    console.log(value);
   };
+
   return (
     <div className="limiter">
       <div className="logo__back_login">
@@ -61,12 +48,12 @@ export const Login = () => {
               />
               <span className="focus-input100" />
             </div>
+            <ReCAPTCHA
+              sitekey="6Ld22LoZAAAAAFe0EPkyx9STpXuq8xxx268wGTAj"
+              onChange={onChange()}
+            />
             <div className="container-login100-form-btn">
-              <button
-                type="submit"
-                className="login100-form-btn"
-                onClick={(event)=>doLogin(event)}
-              >
+              <button type="submit" className="login100-form-btn">
                 Sign in
               </button>
             </div>
