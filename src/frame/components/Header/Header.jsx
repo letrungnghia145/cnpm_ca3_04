@@ -1,12 +1,39 @@
 import React, { useState } from "react";
 import "./";
 import { CustomLink } from "../../../shared/components/custom-link/CustomLink";
-import banner from "./../../../assets/img/hero/banner.jpg";
 import logo from "./../../../assets/img/logo.png";
 import { Link } from "react-router-dom";
+import Facebook from "../../../pages/social/Facebook";
+import Google from "../../../pages/social/Google";
 
 export const Header = () => {
   const [isShow, toggle] = useState(false);
+
+  const loggInTo = () => {
+    if (!isShow) {
+      return (
+        <React.Fragment>
+          <Google />
+          <Facebook />
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <div className="header__top__right__auth mr-2">
+            <Link to="/login">
+              <i className="fa fa-user" /> Login
+            </Link>
+          </div>
+          <div className="header__top__right__auth mr-2">/</div>
+          <div className="header__top__right__auth">
+            <Link to="/register">Register</Link>
+          </div>
+        </React.Fragment>
+      );
+    }
+  };
+
   return (
     <React.Fragment>
       <header className="header">
@@ -25,20 +52,7 @@ export const Header = () => {
               </div>
               <div className="col-lg-6">
                 <div className="header__top__right">
-                  <div className="header__top__right__social">
-                    <a href="/">
-                      <i className="fa fa-facebook" />
-                    </a>
-                    <a href="/">
-                      <i className="fa fa-twitter" />
-                    </a>
-                    <a href="/">
-                      <i className="fa fa-linkedin" />
-                    </a>
-                    <a href="/">
-                      <i className="fa fa-pinterest-p" />
-                    </a>
-                  </div>
+                  
                   <div className="header__top__right__language">
                     <img src="img/language.png" alt="" />
                     <div>English</div>
@@ -58,9 +72,16 @@ export const Header = () => {
                     </Link>
                   </div>
                   <div className="header__top__right__auth mr-2">/</div>
-                  <div className="header__top__right__auth">
+                  <div className="header__top__right__auth mr-1">
                     <Link to="/register">Register</Link>
                   </div>
+                  <div className="header__top__right__auth mr-2 facebook__header">
+                    <Facebook />
+                  </div>
+                  <div className="header__top__right__auth">
+                    <Google />
+                  </div>
+                  {/* {loggInTo} */}
                 </div>
               </div>
             </div>
