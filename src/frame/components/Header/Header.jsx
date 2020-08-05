@@ -163,7 +163,7 @@ export const Header = () => {
                   </div>
                 </div>
               </div>
-              <div
+              {/* <div
                 className="hero__item set-bg"
                 style={{ backgroundImage: `url(${banner})` }}
               >
@@ -178,7 +178,7 @@ export const Header = () => {
                     SHOP NOW
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
