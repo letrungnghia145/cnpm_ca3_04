@@ -15,7 +15,9 @@ export const Login = () => {
       password: "172285633",
     }).then((response) => {
       if (response != null) {
-        localStorage.setItem("jwt", response.data);
+        localStorage.setItem("token", response.data.token);
+        const item = localStorage.getItem('token');
+        console.log(item)
         // const history = useHistory();
         // history.push("/");
         // window.location.reload();
