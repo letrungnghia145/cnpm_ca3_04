@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import backgroundLogin from "./../../assets/img/background-login.jpg";
 import "./../../assets/css/login-style.css";
 import logo from "./../../assets/img/logo.png";
+import { callApi } from "../../api";
+import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 export const Login = () => {
+  
+  const history = useHistory();
+  const doLogin = (event) => {
+    event.preventDefault();
+    callApi("login", "post", {
+      username: "nghia1k45",
+      password: "172285633",
+    }).then((response) => {
+      if (response != null) {
+        localStorage.setItem("jwt", response.data);
+        // const history = useHistory();
+        // history.push("/");
+        // window.location.reload();
+        history.push("/");
+      }
+    });
+  };
   
   const { register, handleSubmit, errors } = useForm();
 
@@ -64,7 +85,11 @@ export const Login = () => {
             </div>
             {errors.password && <p style={{color: "red"}} className="error">{errors.password.message}</p>}
             <div className="container-login100-form-btn">
-              <button type="submit" className="login100-form-btn">
+              <button
+                type="submit"
+                className="login100-form-btn"
+                onClick={(event)=>doLogin(event)}
+              >
                 Sign in
               </button>
             </div>
@@ -88,4 +113,11 @@ export const Login = () => {
       </div>
     </div>
   );
+};
+
+const isLogin = () => {
+  if (localStorage.getItem("jwt") != null) {
+    return true;
+  }
+  return false;
 };
