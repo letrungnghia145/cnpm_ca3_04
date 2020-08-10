@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import backgroundLogin from "./../../assets/img/background-login.jpg";
 import "./../../assets/css/login-style.css";
 import logo from "./../../assets/img/logo.png";
-import { callApi } from "../../api";
-import { Redirect } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import ReCAPTCHA from "react-google-recaptcha";
 
 export const Login = () => {
-  const onChange = (value) => {
-    console.log(value);
-  };
+  
+  const { register, handleSubmit, errors } = useForm();
 
+  function onSubmit(data) {
+    console.log("Data submitted: ", data);
+  }
+  
   return (
     <div className="limiter">
       <div className="logo__back_login">
@@ -21,7 +21,10 @@ export const Login = () => {
       </div>
       <div className="container-login100">
         <div className="wrap-login100">
-          <form className="login100-form validate-form">
+          <form 
+          className="login100-form validate-form"
+          onSubmit={handleSubmit(onSubmit)}
+          >
             <span className="login100-form-title p-b-34">Login</span>
             <div
               className="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
@@ -33,9 +36,13 @@ export const Login = () => {
                 type="text"
                 name="username"
                 placeholder="User name"
+                ref={register({
+                  required: "Enter your username",
+                 })}
               />
               <span className="focus-input100" />
             </div>
+            {errors.username && <p style={{color: "red"}} className="error">{errors.username.message}</p>}
             <div
               className="wrap-input100 rs2-wrap-input100 validate-input m-b-20"
               data-validate="Type password"
@@ -45,13 +52,17 @@ export const Login = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                ref={register({
+                  required: "Enter your password",
+                  minLength: {
+                    value: 8,
+                    message: "Your password is to short, min length is 8"
+                  }
+                })}
               />
               <span className="focus-input100" />
             </div>
-            <ReCAPTCHA
-              sitekey="6Ld22LoZAAAAAFe0EPkyx9STpXuq8xxx268wGTAj"
-              onChange={onChange()}
-            />
+            {errors.password && <p style={{color: "red"}} className="error">{errors.password.message}</p>}
             <div className="container-login100-form-btn">
               <button type="submit" className="login100-form-btn">
                 Sign in
@@ -63,7 +74,6 @@ export const Login = () => {
                 User name / password?
               </a>
             </div>
-            
             <div className="w-full text-center" style={{ paddingTop: "15px" }}>
               <a href="/register" className="txt3">
                 Register
@@ -78,11 +88,4 @@ export const Login = () => {
       </div>
     </div>
   );
-};
-
-const isLogin = () => {
-  if (localStorage.getItem("jwt") != null) {
-    return true;
-  }
-  return false;
 };
